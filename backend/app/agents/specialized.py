@@ -8,6 +8,9 @@ from ..core.config import settings
 import logging
 import json
 import sys
+import os
+from ..services.storage_service import StorageService
+from ..services.vision_service import VisionService
 
 # Configure logging to output to console
 logging.basicConfig(
@@ -90,31 +93,76 @@ class ImageReviewAgent(BaseAgent):
     
     def __init__(self):
         super().__init__()
-        if not settings.OPENAI_API_KEY:
-            raise ValueError("OPENAI_API_KEY environment variable is not set")
-        self.llm = ChatOpenAI(
-            model="gpt-4-vision-preview",
-            api_key=settings.OPENAI_API_KEY
-        )
-        self.prompt = ChatPromptTemplate.from_messages([
-            ("system", "You are an expert at analyzing food delivery packaging issues. Analyze the image and identify any packaging damage or spillage issues."),
-            ("human", "Please analyze this image: {image_url}")
-        ])
+        self.storage_service = StorageService()
+        self.vision_service = VisionService()
     
     async def process(self, state: Dict[str, Any]) -> Dict[str, Any]:
         assert_message_objects(state['messages'], "ImageReviewAgent.process entry")
         logger.info(f"ImageReviewAgent received state: {json.dumps(state, default=str)}")
         
-        # Add a final response
-        result = {
-            "messages": state['messages'] + [AIMessage(content="I've reviewed your request. Since no image was provided, I can't analyze it. Please provide an image URL if you'd like me to review it.")],
-            "current_agent": state["current_agent"],
-            "metadata": state["metadata"],
-            "next_agent": None  # End the workflow
-        }
-        assert_message_objects(result['messages'], "ImageReviewAgent.process return")
-        logger.info(f"ImageReviewAgent returning state: {json.dumps(result, default=str)}")
-        return result
+        if "image_url" not in state["metadata"]:
+            return {
+                "messages": state['messages'] + [AIMessage(content="I've reviewed your request. Since no image was provided, I can't analyze it. Please provide an image URL if you'd like me to review it.")],
+                "current_agent": state["current_agent"],
+                "metadata": state["metadata"],
+                "next_agent": None
+            }
+
+        try:
+            # Upload the image to Azure Storage
+            local_image_path = state["metadata"]["image_url"]
+            blob_url = await self.storage_service.upload_file(local_image_path)
+            
+            # Update metadata with the blob URL
+            state["metadata"]["blob_url"] = blob_url
+            
+            # Analyze the image using Google Vision API
+            analysis = await self.vision_service.analyze_image(blob_url)
+            
+            # Generate a detailed response based on the analysis
+            response_parts = []
+            
+            if analysis['issues_detected']:
+                response_parts.append("I've detected some issues in the image:")
+                # Add specific issues found
+                for label in analysis['labels']:
+                    if label['description'].lower() in ['damage', 'spill', 'leak', 'broken', 'dirty', 'mess']:
+                        response_parts.append(f"- {label['description']} (confidence: {label['confidence']:.2f})")
+            else:
+                response_parts.append("No significant issues detected in the image.")
+            
+            # Add food-related observations
+            food_related = [label for label in analysis['labels'] 
+                          if label['description'].lower() in ['food', 'meal', 'dish', 'restaurant', 'delivery', 'package']]
+            if food_related:
+                response_parts.append("\nFood-related content detected:")
+                for item in food_related:
+                    response_parts.append(f"- {item['description']} (confidence: {item['confidence']:.2f})")
+            
+            response = "\n".join(response_parts)
+            
+            result = {
+                "messages": state['messages'] + [AIMessage(content=response)],
+                "current_agent": state["current_agent"],
+                "metadata": state["metadata"],
+                "next_agent": None
+            }
+            
+            # Clean up the local file
+            os.remove(local_image_path)
+            
+            assert_message_objects(result['messages'], "ImageReviewAgent.process return")
+            logger.info(f"ImageReviewAgent returning state: {json.dumps(result, default=str)}")
+            return result
+            
+        except Exception as e:
+            logger.error(f"Error processing image: {str(e)}")
+            return {
+                "messages": state['messages'] + [AIMessage(content=f"Sorry, I encountered an error while analyzing the image: {str(e)}")],
+                "current_agent": state["current_agent"],
+                "metadata": state["metadata"],
+                "next_agent": None
+            }
     
     def should_handle(self, state: Dict[str, Any]) -> bool:
         logger.info(f"ImageReviewAgent checking if should handle: {json.dumps(state, default=str)}")
