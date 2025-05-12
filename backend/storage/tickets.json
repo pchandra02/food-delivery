@@ -1,0 +1,178 @@
+{
+  "9ff232ac-8bd6-4d89-8b4a-fb59bb33c111": {
+    "order_id": "ORD-ewdq5lm5g",
+    "issue_type": "food_quality",
+    "description": "rotten food",
+    "language": "en",
+    "image_url": null,
+    "ticket_id": "9ff232ac-8bd6-4d89-8b4a-fb59bb33c111",
+    "status": "open",
+    "ai_analysis": {
+      "response": "Issue Type: IssueType.FOOD_QUALITY\nDescription: rotten food\nImage Analysis: No issues detected in the image.\nQuality Level: Good\nSource: BisonHQ - BisonsEye.tumblr.com\nI found the image that was above the other one before but was not there as of now. As you can see, there is no quality level in this image and only in the first image do I know I can use the same quality level. That is when",
+      "requires_human": false,
+      "confidence_score": 0.8,
+      "suggested_actions": [
+        "Request refund",
+        "Report to vendor"
+      ]
+    },
+    "created_at": "2025-05-07 10:35:51.593091",
+    "updated_at": "2025-05-07 10:35:51.593148",
+    "resolution": null,
+    "requires_human": false
+  },
+  "d3d54c4a-2da6-401d-9828-9c2824705a54": {
+    "order_id": "ORD-5xx8flu56",
+    "issue_type": "food_quality",
+    "description": "rotten food",
+    "language": "en",
+    "image_url": null,
+    "ticket_id": "d3d54c4a-2da6-401d-9828-9c2824705a54",
+    "status": "open",
+    "ai_analysis": {
+      "response": "Issue Type: IssueType.FOOD_QUALITY\nDescription: rotten food\nImage Analysis: No issues detected in the image.\n\n\nPackage: This package is known to be used as a root file, but cannot be mounted or added to the root filesystem as a package. When you install this file to the partition and unmount it into any location, it will make sure it is mounted by default. Use /install for this.\n\n# install-dont-root-",
+      "requires_human": false,
+      "confidence_score": 0.8,
+      "suggested_actions": [
+        "Request refund",
+        "Report to vendor"
+      ]
+    },
+    "created_at": "2025-05-07 10:37:32.520653",
+    "updated_at": "2025-05-07 10:37:32.520663",
+    "resolution": null,
+    "requires_human": false
+  },
+  "a6bbfa56-ec04-48eb-a94d-46f60659686b": {
+    "order_id": "ORD-ph961ro91",
+    "issue_type": "food_quality",
+    "description": "rotten food",
+    "language": "en",
+    "image_url": null,
+    "ticket_id": "a6bbfa56-ec04-48eb-a94d-46f60659686b",
+    "status": "open",
+    "ai_analysis": {
+      "response": "Issue Type: IssueType.FOOD_QUALITY\nDescription: rotten food\nImage Analysis: No issues detected in the image.\nInclude or omit this image:\n\n\nDownload images from Pixlr (http://www.pixlr.org/download/)\n\nA free web image is a digital digital image. A JPEG images are just two images. You can choose between 16 bit and 16 bit wide. The image dimensions are: 16 x 48 x 44 mm. There",
+      "requires_human": false,
+      "confidence_score": 0.8,
+      "suggested_actions": [
+        "Request refund",
+        "Report to vendor"
+      ]
+    },
+    "created_at": "2025-05-07 10:51:16.732642",
+    "updated_at": "2025-05-07 10:51:16.732648",
+    "resolution": null,
+    "requires_human": false
+  },
+  "47cbd109-0908-4dcb-a52a-ae6142689c15": {
+    "order_id": "ORD-2sb34sbq6",
+    "issue_type": "food_quality",
+    "description": "rotten food",
+    "language": "en",
+    "image_url": null,
+    "ticket_id": "47cbd109-0908-4dcb-a52a-ae6142689c15",
+    "status": "open",
+    "ai_analysis": {
+      "response": "Issue Type: IssueType.FOOD_QUALITY\nDescription: rotten food content. The amount of spoiled rotten food or food items will fluctuate over time when stored and changed.\nEffects:\nFurnished food items will affect a host using a special formula.\nEffects in this context can be applied to all hosts:\nFurnished food items will improve the host's immune status and increase the host's immune status.\nEffects of the formulas have no effect on hunger.",
+      "requires_human": false,
+      "confidence_score": 0.8,
+      "suggested_actions": [
+        "Request refund",
+        "Report to vendor"
+      ]
+    },
+    "created_at": "2025-05-07 10:54:47.705446",
+    "updated_at": "2025-05-07 10:54:47.705459",
+    "resolution": null,
+    "requires_human": false
+  },
+  "f4ad0e1a-ed45-4e4a-887d-23a3d1e7f4d9": {
+    "order_id": "ORD-80iha6dzk",
+    "issue_type": "food_quality",
+    "description": "rotten food",
+    "language": "en",
+    "image_url": null,
+    "ticket_id": "f4ad0e1a-ed45-4e4a-887d-23a3d1e7f4d9",
+    "status": "open",
+    "ai_analysis": {
+      "response": "Issue Type: IssueType.FOOD_QUALITY\nDescription: rotten food\nImage Analysis: No issues detected in the image.\nSource: No data retrieved.\n\nDistribution: No distribution.\n\nRelease Date: 2008-12-31 12:22:30\n\nDescription: Food is not present or consumed in the package.\n\nImage Analysis: No issues detected in the image.\n\nSource: No data retrieved.\n\nDistribution: No distribution.",
+      "requires_human": false,
+      "confidence_score": 0.8,
+      "suggested_actions": [
+        "Request refund",
+        "Report to vendor"
+      ]
+    },
+    "created_at": "2025-05-07 10:56:18.553151",
+    "updated_at": "2025-05-07 10:56:18.553333",
+    "resolution": null,
+    "requires_human": false
+  },
+  "fef94c90-6c88-4680-a9c5-3ed49b6abba0": {
+    "order_id": "ORD-767j2ezry",
+    "issue_type": "food_quality",
+    "description": "rotten food",
+    "language": "en",
+    "image_url": null,
+    "ticket_id": "fef94c90-6c88-4680-a9c5-3ed49b6abba0",
+    "status": "open",
+    "ai_analysis": {
+      "response": "Issue Type: IssueType.FOOD_QUALITY\nDescription: rotten food\nImage Analysis: No issues detected in the image.\nDescription: food with green color. Please note that the image format for the image may differ from the format found in the images.\nIf any image or directory contains more than one.jpg file, it may require a minimum number of images.\nIf the minimum size specified is more than the specified number of files required, the image may be broken.",
+      "requires_human": false,
+      "confidence_score": 0.8,
+      "suggested_actions": [
+        "Request refund",
+        "Report to vendor"
+      ]
+    },
+    "created_at": "2025-05-07 10:58:49.143658",
+    "updated_at": "2025-05-07 10:58:49.143794",
+    "resolution": null,
+    "requires_human": false
+  },
+  "72268952-8de4-4ab8-8608-c5d770507ed7": {
+    "order_id": "ORD-ziba3gj2e",
+    "issue_type": "food_quality",
+    "description": "rotten food",
+    "language": "en",
+    "image_url": null,
+    "ticket_id": "72268952-8de4-4ab8-8608-c5d770507ed7",
+    "status": "open",
+    "ai_analysis": {
+      "response": "Issue Type: IssueType.FOOD_QUALITY\nDescription: rotten food\nImage Analysis: No issues detected in the image.\nImage Processing: No issues detected in the image.\nProcessing time: 5 minutes\nThe following image is uploaded as a JPEG, and is automatically converted to PNG and converted into an SVG: The image dimensions are as follows: 7 x 7 in x8, width is 1024 pixels, height is 424 pixels, and resolution is 1080 x 1080 (",
+      "requires_human": false,
+      "confidence_score": 0.8,
+      "suggested_actions": [
+        "Request refund",
+        "Report to vendor"
+      ]
+    },
+    "created_at": "2025-05-08 07:00:43.282267",
+    "updated_at": "2025-05-08 07:00:43.282298",
+    "resolution": null,
+    "requires_human": false
+  },
+  "3f735bac-74f4-47a9-9e73-81ef0a9c8840": {
+    "order_id": "ORD-b7utreh8s",
+    "issue_type": "food_quality",
+    "description": "rotten food",
+    "language": "en",
+    "image_url": null,
+    "ticket_id": "3f735bac-74f4-47a9-9e73-81ef0a9c8840",
+    "status": "open",
+    "ai_analysis": {
+      "response": "Issue Type: IssueType.FOOD_QUALITY\nDescription: rotten food\nImage Analysis: No issues detected in the image.\nType: IssueType.CURST_BOTTOM_INVALID_HILL\nDescription: wall of trash\nImage Analysis: No issues detected in the image.\nType: IssueType.CURTIC_CANCELIT.FOAD_QUALITY\nDescription: rotten food\nImage Analysis: No issues detected in",
+      "requires_human": false,
+      "confidence_score": 0.8,
+      "suggested_actions": [
+        "Request refund",
+        "Report to vendor"
+      ]
+    },
+    "created_at": "2025-05-10 01:01:28.809699",
+    "updated_at": "2025-05-10 01:01:28.809714",
+    "resolution": null,
+    "requires_human": false
+  }
+}
